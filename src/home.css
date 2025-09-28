@@ -1,7 +1,9 @@
 @import './index.css';
 
-.container{
+.homeContainer{
+    width: 100%;
+    height: 100dvh;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    background-color: var(--branco);
 }

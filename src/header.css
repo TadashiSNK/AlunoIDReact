@@ -37,8 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    border:  2px solid red;
-    background-color: pink;
+    /* border:  2px solid red;
+    background-color: pink; */
     height: 100%;
     width: 30%;
 }

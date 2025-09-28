@@ -21,5 +21,25 @@ body{
 }
 
 .bold{
-  font-weight: bold;
+    font-weight: bold;
+}
+
+.noDecor{
+    text-decoration: none;
+    list-style: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #000000; /* nice blue */
+    text-decoration: none;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

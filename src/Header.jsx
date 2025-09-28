@@ -3,6 +3,7 @@ import './header.css'
 import logo from './assets/impressao-digital.png'
 import notificacao from './assets/notificacao.png'
 import pfp from './assets/jorge.png'
+import kevin from './assets/kevin.jpg'
 
 
 function Header(){
@@ -23,7 +24,7 @@ function Header(){
                     <p class="bold">Chupeta</p>
                 </div>
 
-                <img src={pfp} className='profilePicture'/>
+                <img src={kevin} className='profilePicture'/>
 
             </div>
         </div>
