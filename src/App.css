@@ -1,0 +1,13 @@
+
+:root{
+    --azulClaro: #3ba0ff;
+    --azulClaroHover: #1173ce;
+    --branco: #F5F5F5;
+}
+
+
+.container{
+  height: 100dvh;
+  width: 100%;
+  background-color: var(--branco);
+}

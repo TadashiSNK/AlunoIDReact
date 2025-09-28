@@ -1,0 +1,26 @@
+@import './index.css';
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to left, #32d6e2, #23b0e9);
+    height: 250px;
+    width: 100%;
+}
+
+.footerBlock{
+    background-color: transparent;
+    display: inline-block;
+    align-items: start;
+    justify-content: start;
+    padding: 25px 25px 0px 25px;
+    font-size: 20px;
+    height: 100%;
+    width: 25%;
+    color: white;
+}
+
+.font{
+    font-weight: bold;
+    background-color:transparent;
+}

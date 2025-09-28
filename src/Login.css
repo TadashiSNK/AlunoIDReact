@@ -1,0 +1,21 @@
+@import './index.css';
+
+
+.login-btn{
+    width: 40%;
+    height: 55px;
+    border-radius: 50px;
+    background-color: #3DC2FF;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease 0s;
+}
+
+.login-btn:hover{
+    width: 45%;
+    height: 55px;
+    background-color: #3DC2FF;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
