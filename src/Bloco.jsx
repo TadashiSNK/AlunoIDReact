@@ -1,5 +1,4 @@
-
-
+import { Link } from 'react-router-dom'
 
 import './bloco.css'
 
@@ -16,7 +15,7 @@ function Bloco(props){
                     <p className='titulo bold '>{props.titulo} <span className='subtitulo bold'>{props.subtitulo}</span></p>
                 </div>
 
-            <button className='bloco-button'>{props.btnName}</button>
+            <Link className='bloco-a' to={props.urlClick}>{props.btnName}</Link>
             </div>
 
 

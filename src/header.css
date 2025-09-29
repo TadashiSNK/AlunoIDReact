@@ -8,11 +8,14 @@
     background-color: var(--branco);
 
     width: 100%;
+    margin: 0px 3%;
     height: 10dvh;
     border-bottom: 2px solid black;
 }
 
 .logoContainer{
+    margin-left: -40px;
+    /* background-color: black; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -34,6 +37,7 @@
 }
 
 .userMenu{
+    margin-right: -30px;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -52,16 +56,12 @@
     padding: 10px;
 }
 
-.profilePictureContainer{
-    height: 70px;
-    width: 70px;
-    background-color: yellow;
-}
 
 .profilePicture{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);;
     border: 3px solid rgb(0, 0, 0);
     height: 70px;
     width: 70px;
     border-radius: 200px;
+    margin-left: 5%;
 }

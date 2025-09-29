@@ -1,0 +1,62 @@
+
+
+
+
+.blocoAnotacoes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.margin-20{
+    margin: 20px;
+    margin-right: 0px;
+    width: 40%;
+}
+
+.topdiv{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background-color: pink; */
+    width: 100%;
+    height: 20%;
+}
+
+.livroBig{
+    margin: 20px;
+    height: 180%;
+    width: auto;
+}
+
+.bottomDiv{
+    /* background-color: rgba(165, 42, 42, 0.274); */
+    padding-left: 15px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.addNotas{
+    /* background-color: violet; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.addIcon{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-weight: 600;
+}

@@ -1,0 +1,19 @@
+.estilo{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-radius: 15px;
+    margin:5px;
+}
+
+.texto{
+    justify-content: start;
+    margin-left: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.notinhaIcone{
+    height: 30px;
+    width: auto;
+}

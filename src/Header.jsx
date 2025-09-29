@@ -4,12 +4,18 @@ import logo from './assets/impressao-digital.png'
 import notificacao from './assets/notificacao.png'
 import pfp from './assets/jorge.png'
 import kevin from './assets/kevin.jpg'
+import { useNavigate } from 'react-router-dom'
 
 
 function Header(){
+
+    const navigate = useNavigate();
+
+    const goToHome = () => {navigate('/')}
+
     return(
         <div className="headerContainer">
-            <div className='logoContainer'>
+            <div onClick={goToHome} className='logoContainer'>
                 <img src={logo} className='logoHome' />
                 <h2><span className="blueFontLogo">Aluno</span>ID</h2>
             </div>
