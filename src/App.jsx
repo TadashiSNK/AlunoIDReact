@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './Home'
-import Carteirinha from './Carteirinha'
+import Home from './Pages/Home'
+import Carteirinha from './Pages/Carteirinha'
+import Anotacoes from './Pages/Anotacoes.jsx'
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
 
 
@@ -13,8 +14,12 @@ const router = createBrowserRouter([
     element: <Home />
   },
   {
-    path : 'carteirinha',
+    path : 'Carteirinha',
     element: <Carteirinha />
+  },
+  {
+    path : '/Anotacoes',
+    element: <Anotacoes />
   }
 ])
 

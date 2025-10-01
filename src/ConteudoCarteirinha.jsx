@@ -4,9 +4,20 @@ import Bloco from './Bloco'
 import carteirinhaBig from './assets/carteirinhaBig.png'
 import catracaBig from './assets/catracaBig.png'
 import kevin from './assets/kevin.jpg'
+import { useEffect, useState } from 'react'
+import { QRCodeSVG } from 'qrcode.react'
 
 
 function ConteudoCarteirinha(){
+    let cor = "black"
+    let codeSize = 300;
+    const carteirinhaHash = "kevinChupetaMonstro"
+
+
+    const [qrCode, setQrCode] = useState(null);
+
+
+
     return (
         <div className='conteudoContainer'>
             <div className='blocoCarta flex-center'>
@@ -25,7 +36,9 @@ function ConteudoCarteirinha(){
             </div>
 
             <div className='blocoCarta flex-center'>
-
+                <div className='qrCodeContainer' >
+                    <QRCodeSVG fgColor={cor} bgColor="transparent" size={codeSize} value={carteirinhaHash}/>
+                </div>
 
             </div>
         </div>

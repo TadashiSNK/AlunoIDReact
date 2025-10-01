@@ -1,6 +1,8 @@
-@import './index.css';
+@import '../index.css';
 
-.homeContainer{
+
+
+.anotacoesContainer{
     width: 100%;
     height: 100dvh;
     display: flex;

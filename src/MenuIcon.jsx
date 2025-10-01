@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 
 function MenuIcon(props){
     return (
-        <div>
-            <li><img className='menuIcon' src={props.image} /><Link className='noDecor' to={props.targetLink}><p className='sideBarFont'>{props.name}</p></Link></li>
-        </div>
+        <Link className='noDecor' to={props.targetLink}>
+            <div>
+                <li><img className='menuIcon' src={props.image} /><p className='sideBarFont'>{props.name}</p></li>
+            </div>
+        </Link>
     )
 }
 

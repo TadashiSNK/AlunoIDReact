@@ -6,8 +6,7 @@ import pfp from './assets/jorge.png'
 import kevin from './assets/kevin.jpg'
 import { useNavigate } from 'react-router-dom'
 
-
-function Header(){
+function Header(props){
 
     const navigate = useNavigate();
 
@@ -20,7 +19,13 @@ function Header(){
                 <h2><span className="blueFontLogo">Aluno</span>ID</h2>
             </div>
 
-            <p>teste</p>
+            <div className='centerContent'>
+                <div className='text'>
+                    <p className='title bold'>{props.title}</p>
+                    <p className='subtitle bold'>{props.subtitle}</p>
+                </div>
+                <img className='imgcenter' src={props.src}></img>
+            </div>
 
             <div className='userMenu'>
                 <img src={notificacao} className='notificacao' />
