@@ -8,7 +8,7 @@ import pfp from './assets/jorge.png'
 
 function Footer(){
     return(
-        <div className='container'>
+        <div className='footerContainer'>
             <div className="footerBlock">
                 <p className="font">Ajuda:</p>
                 <br />

@@ -1,0 +1,14 @@
+@import './index.css';
+
+
+
+.diaDiv{
+    width: 100%;
+    height: 100%;
+}
+
+.diaDiv p{
+    color: white;
+    text-align: center;
+}
+

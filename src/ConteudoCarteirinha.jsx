@@ -1,5 +1,5 @@
-import './conteudoCarteirinha.css'
 import './conteudo.css'
+import './conteudoCarteirinha.css'
 import Bloco from './Bloco'
 import carteirinhaBig from './assets/carteirinhaBig.png'
 import catracaBig from './assets/catracaBig.png'

@@ -1,0 +1,39 @@
+@import './index.css';
+
+
+
+.itemListaNota{
+    margin: 3px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    height: 13%;
+    width: 100%;
+    background-color: salmon;
+}
+
+.notinhaIcon{
+    background-color: transparent;
+    height: 80%;
+    width: auto;
+}
+
+.textos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.tituloNota{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.subtituloNota{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.8);
+
+}

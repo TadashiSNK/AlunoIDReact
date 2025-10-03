@@ -45,7 +45,7 @@ a:active {
 }
 
 .globalContainer{
-    background-color: var(--azulClaro);
+    background-color: var(--azulClaroHover);
     height: 100%;
     width: 100%;
     display: flex;

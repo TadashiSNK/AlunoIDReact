@@ -1,6 +1,6 @@
 @import './index.css';
 
-.container{
+.footerContainer{
     display: flex;
     flex-direction: row;
     background: linear-gradient(to left, #32d6e2, #23b0e9);

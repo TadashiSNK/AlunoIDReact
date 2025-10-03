@@ -1,0 +1,69 @@
+
+
+
+@import './index.css';
+
+.flex-bloco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 15px 0px;
+}
+
+.calendarioDisplay{
+    padding: 15px 0px;
+    display: grid;
+    grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6% ;
+    grid-template-columns: 14.285% 14.285% 14.285% 14.285% 14.285% 14.285% 14.285%;
+
+    align-items: start;
+    justify-content: center;
+    background-color: #0074D9;
+    width:90%;
+    height:70%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+.tituloCalendario{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-top-left-radius: 15px ;
+    border-top-right-radius: 15px ;
+    background-color: #0074D9;
+    width: 90%;
+    height: 30%;
+}
+
+.nomeMes{
+    color: white;
+    font-size: 30px;
+    padding-left: 120px;
+
+}
+
+.numeroAno{
+    color: white;
+    padding-left: 100px;
+}
+
+.diasDaSemana{
+    display: grid;
+    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    background-color: #0074D9;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 90%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.445);
+}
+
+.diaString{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
