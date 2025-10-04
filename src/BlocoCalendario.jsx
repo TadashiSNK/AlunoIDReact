@@ -5,7 +5,7 @@ import 'react-calendar/dist/Calendar.css'
 import Anotacoes from './Pages/Anotacoes'
 import DiaItem from './DiaItem'
 
-const data = new Date("2025-2-13")
+const data = new Date()
 const dia = data.getDate() // dia começa no 1
 const mes = data.getMonth() // começa no 0
 const ano = data.getFullYear() // ano é equivalente ao ano atual

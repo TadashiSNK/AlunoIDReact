@@ -1,0 +1,44 @@
+@import '../index.css';
+
+
+
+.horariosContainer{
+    /* background: linear-gradient(to right, var(--branco), var(--azulClaro)); */
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90dvh;
+    width: 70%;
+
+}
+
+.listaDeHorarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    padding: 10px;
+    padding-top: 0px;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.titulos{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    flex-shrink: 0;
+    height: 110px;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

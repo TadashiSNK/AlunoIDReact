@@ -18,9 +18,10 @@ function SideMenu(){
             <ul>
                 <MenuIcon  name="Inicio" image={casinha} targetLink="/"/>
                 <MenuIcon  name="Carteirinha" image={carteirinha} targetLink="/Carteirinha"/>
-                <MenuIcon  name="Entrada e Saida" image={catraca} targetLink="https://google.com"/>
+                <MenuIcon  name="Entrada e Saida" image={catraca} targetLink="/Horarios"/>
                 <MenuIcon  name="Anotações" image={livro} targetLink="/Anotacoes"/>
                 <MenuIcon  name="Calendário" image={calendario} targetLink="https://google.com"/>
+                <MenuIcon  name="DEBUG" targetLink="/LoadingDebug"/>
             </ul>
         </div>
     )
