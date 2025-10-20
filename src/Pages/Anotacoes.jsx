@@ -5,12 +5,13 @@ import Footer from '../Footer'
 import SideMenu from '../SideMenu'
 import ConteudoCarteirinha from '../ConteudoCarteirinha'
 import ConteudoAnotacoes from '../ConteudoAnotacoes'
+import livrinho from "../assets/livro.png"
 
 
-function Anotacoes() {
-    return (
+function Anotacoes(){
+    return(
         <div className='anotacoesContainer'>
-            <Header subtitle="Anotações"/>
+            <Header subtitle="Anotações" src={livrinho} / >
             <SideMenu />
             <ConteudoAnotacoes />
             <Footer />

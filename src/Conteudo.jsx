@@ -10,7 +10,7 @@ function Conteudo(){
     return(
         <div className='conteudoContainer'>
             <Bloco btnName="Acessar Agora" imagem={carteirinhaBig} titulo="Acesse sua" subtitulo="Carteira de Estudante" urlClick="/carteirinha"></Bloco>
-            <Bloco btnName="Acessar Agora" imagem={catracaBig} titulo="Registro" subtitulo="Entrada e Saida"></Bloco>
+            <Bloco btnName="Acessar Agora" imagem={catracaBig} titulo="Registro" subtitulo="Entrada e Saida" urlClick="/Horarios"></Bloco>
             <BlocoAnotacoes />
             <BlocoCalendario />
 

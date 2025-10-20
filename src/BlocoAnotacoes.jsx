@@ -15,7 +15,7 @@ function BlocoAnotacoes(){
                 <BarraNotinhasBloco cor="#8245F4" tamanho="92%" textContent="Atividade Feita Na Aula De Matematica"/>
                 <BarraNotinhasBloco cor="#FBBC05" tamanho="92%" textContent="Chegar Mais Cedo Na Quarta"/>
 
-                <div className='addNotas'>
+                <div className='addNotas bold'>
                     Adicionar Anotações <p className='addIcon'>+</p>
                 </div>
                 

@@ -9,6 +9,7 @@ import Anotacoes from './Pages/Anotacoes.jsx'
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
 import LoadingScreen from './LoadingScreen.jsx'
 import EntradaSaida from './Pages/EntradaSaida.jsx'
+import Login from './Login.jsx'
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path : '/LoadingDebug',
     element: <Home2 />
+  },
+  {
+    path : '/Login',
+    element: <Login />
   }
 ])
 

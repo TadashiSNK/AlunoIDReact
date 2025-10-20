@@ -6,13 +6,14 @@ import Footer from '../Footer'
 import SideMenu from '../SideMenu'
 import qrcode from '../assets/qr-code-default.png'
 import ConteudoCarteirinha from '../ConteudoCarteirinha'
+import catraca from '../assets/catracaIcon.png'
 
 
 
 function EntradaSaida(props){
     return(
         <div className='homeContainer'>
-            <Header title="Entrada" subtitle="E Saida"/>
+            <Header title="Entrada" subtitle="E Saida" src={catraca} />
             <SideMenu />
             <EntradaSaidaCont />
             <Footer />

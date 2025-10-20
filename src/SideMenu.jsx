@@ -10,18 +10,41 @@ import calendario from './assets/calendarioIcon.png'
 import kevin from './assets/kevin.jpg'
 import casinha from './assets/homeIcon.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 function SideMenu(){
+
+
+    
+    const menuItems = [
+    { name: "Inicio", image: casinha, targetLink: "/" },
+    { name: "Carteirinha", image: carteirinha, targetLink: "/Carteirinha" },
+    { name: "Entrada e Saida", image: catraca, targetLink: "/Horarios" },
+    { name: "Anotações", image: livro, targetLink: "/Anotacoes" },
+    { name: "Calendário", image: calendario, targetLink: "https://google.com" },
+    { name: "DEBUG", targetLink: "/LoadingDebug" },
+    { name: "LOGIN", targetLink: "/Login" }]
+
+
+    const [selected, setSelected] = useState(null)
+    
+
+
+
+
     return(
         <div className='sideMenuContainer'>
             <ul>
-                <MenuIcon  name="Inicio" image={casinha} targetLink="/"/>
-                <MenuIcon  name="Carteirinha" image={carteirinha} targetLink="/Carteirinha"/>
-                <MenuIcon  name="Entrada e Saida" image={catraca} targetLink="/Horarios"/>
-                <MenuIcon  name="Anotações" image={livro} targetLink="/Anotacoes"/>
-                <MenuIcon  name="Calendário" image={calendario} targetLink="https://google.com"/>
-                <MenuIcon  name="DEBUG" targetLink="/LoadingDebug"/>
+                {menuItems.map((item, index) => {
+                    return(
+                        <MenuIcon 
+                        key={index} 
+                        {...item} 
+                        isSelected={selected === index}
+                        onClick={() => setSelected(index)} />
+                    )
+                } )}
             </ul>
         </div>
     )
