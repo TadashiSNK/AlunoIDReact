@@ -3,11 +3,19 @@
 
 
 .diaDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
 
 .diaDiv p{
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    /* background-color: red; */
     color: white;
     text-align: center;
 }

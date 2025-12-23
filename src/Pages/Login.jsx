@@ -1,0 +1,95 @@
+import './Login.css'
+import logoDigital from '../assets/impressao-digital.png'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
+
+//request do login
+
+
+
+
+function Login(){
+
+//request do login
+    const [user, setUser] = useState(null)
+    const [senha, setSenha] = useState(null)
+    const [erroLogin, seterroLogin] = useState(false)
+    const navigate = useNavigate()
+
+    const tentarLogar = async () => {
+        const response = await fetch('http://localhost:3333/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: user,
+                senha: senha
+            })
+        })
+        const tokenJson = await response.json()
+
+        if (!response.ok){
+            seterroLogin(true)
+            console.log("deu errado")
+            return
+        }
+
+        ///se o login der certo, seta o token no local storage
+        localStorage.setItem("token", tokenJson.token);
+
+        if (tokenJson) {
+
+        ///se o login der certo, seta o token no local storage
+        localStorage.setItem("token", tokenJson.token);
+        navigate("/")
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+/// Elemento react
+    return(
+        <div className='loginContainer flex-center'>
+
+            <div className='mainBox flex-center'>
+
+                <div className='logoDiv flex-center'>
+
+                    <div className='logoText'>
+                        <h2 className='texto1'>Aluno<span style={{color:'black'}}>ID</span></h2>
+                    </div>
+
+                    <img src={logoDigital}></img>
+                </div>
+                <div className='CPF-Senha'>
+                    
+                <div className="flex-center campos">
+                    <input type="text" name="user" placeholder="E-mail/CPF" id="user" onChange={(e) => setUser(e.target.value)}></input>
+                    <input type="text" name="senha" placeholder="Senha" id="senha" onChange={(e) => setSenha(e.target.value)}></input>
+                    <button onClick={tentarLogar}>ENTRAR</button>
+                    <a href="google.com" id="esqueci-senha">Esqueci minha senha</a>
+
+
+                </div>
+
+                    {erroLogin && <p className='erroLogin'>Login e/ou senha incorretos</p>}
+                </div>
+
+            </div>
+
+        </div>
+    )
+}
+
+
+
+export default Login

@@ -1,10 +1,14 @@
 import express from 'express'
 import { AppDataSource } from './database/data-source.js'
 import routes from './routes.js'
+import cors from 'cors'
 
 const server = express()
 const port = 3333
 
+
+server.use(express.urlencoded({ extended: true }))
+server.use(cors())
 server.use(express.json())
 server.use("/", routes)
 

@@ -11,7 +11,7 @@ import livrinho from "../assets/livro.png"
 function Anotacoes(){
     return(
         <div className='anotacoesContainer'>
-            <Header subtitle="Anotações" src={livrinho} / >
+            <Header subtitle="Anotações" src={livrinho} />
             <SideMenu />
             <ConteudoAnotacoes />
             <Footer />

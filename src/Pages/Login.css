@@ -1,4 +1,4 @@
-@import './index.css';
+@import '../index.css';
 
 
 .loginContainer{
@@ -9,9 +9,10 @@
 }
 
 .mainBox{
-    /* border: 1px solid black; */
-    justify-content: center;
+    /* background-color: green; */
+    /* border: 1px solid red; */
     flex-direction: column;
+    text-align: center;
     height: 600px;
     width: 600px;
 }
@@ -53,7 +54,7 @@
 }
 
 .CPF-Senha{
-    /* background-color: yellow; */
+    /* background-color: red; */
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
@@ -61,7 +62,7 @@
     /* background-color: tomato; */
 }
 
-.CPF-Senha form{
+.CPF-Senha .campos{
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
@@ -96,7 +97,7 @@
     background-color: #3DC2FF;
     border: none;
     cursor: pointer;
-    transition: all 0.15s ease 0s;
+    transition: ease 50ms;
 }
 
 .CPF-Senha button:hover{
@@ -135,4 +136,13 @@
     border: none;
     cursor: pointer;
     color: white;
+}
+
+.erroLogin{
+    position: relative;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    left: auto;
+    right: auto;
 }

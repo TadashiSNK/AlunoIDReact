@@ -1,6 +1,9 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 
+
+import Usuario from "../entities/usuario.js"
+
 const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
@@ -9,7 +12,7 @@ const AppDataSource = new DataSource({
     password: "",
     database: "ALUNOIDBD",
     // synchronize: true,
-    entities: ["./Server/entities/*.js"],       
+    entities: [Usuario],       
     migrations: ["./Server/database/migrations/*cjs"],
 })
 

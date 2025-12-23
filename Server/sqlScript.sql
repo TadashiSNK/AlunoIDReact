@@ -8,6 +8,7 @@ desc usuario;
 desc anotacoes;
 desc notificacoes;
 
+select * from usuario;
 
 
 create table usuario(
@@ -25,11 +26,14 @@ create table usuario(
     carteirinhaHash varchar(255) UNIQUE
 );
 
+create table 
+
 
 ################################
 drop table usuario;
 select * from usuario;
 INSERT INTO usuario (nome, cpf, email, cep, numero_casa, senha, usuario_ativo, em_aula) VALUES ('João Silva', '12345678901', 'joao@email.com', '12345-678', '12A', 'senha123', TRUE, FALSE);
+INSERT INTO usuario (nome, cpf, email, cep, numero_casa, senha, usuario_ativo, em_aula) VALUES ('Lucas Tadashi', '12345678901', 'lucas@email.com', '12345-678', '12A', '123', TRUE, FALSE);
 ################################
 
 

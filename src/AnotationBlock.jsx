@@ -7,7 +7,7 @@ function AnotationBlock(props){
             <img className='notinhaIcon' src={notasIcon}></img>
             
             <div className='textos'>
-                <p className='tituloNota bold'> {props.titulo}aa </p>
+                <p className='tituloNota bold'> {props.titulo} </p>
                 <p className='subtituloNota bold' > {props.subtitulo} </p>
             </div>
         </div>

@@ -23,8 +23,10 @@ function SideMenu(){
     { name: "Entrada e Saida", image: catraca, targetLink: "/Horarios" },
     { name: "Anotações", image: livro, targetLink: "/Anotacoes" },
     { name: "Calendário", image: calendario, targetLink: "https://google.com" },
+    { name: "Cadastro", image: livro, targetLink: "/Cadastro"},
     { name: "DEBUG", targetLink: "/LoadingDebug" },
-    { name: "LOGIN", targetLink: "/Login" }]
+    { name: "LOGIN", targetLink: "/Login" },
+]
 
 
     const [selected, setSelected] = useState(null)

@@ -9,7 +9,8 @@ import Anotacoes from './Pages/Anotacoes.jsx'
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
 import LoadingScreen from './LoadingScreen.jsx'
 import EntradaSaida from './Pages/EntradaSaida.jsx'
-import Login from './Login.jsx'
+import Login from './Pages/Login.jsx'
+import Cadastro from './Pages/Cadastro.jsx'
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path : '/Login',
     element: <Login />
+  },
+  {
+    path : '/Cadastro',
+    element: <Cadastro/>
   }
 ])
 
