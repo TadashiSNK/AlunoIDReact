@@ -2,7 +2,7 @@ import express from 'express'
 import { AppDataSource } from '../database/data-source.js'
 import usuariosEntity from '../entities/usuario.js'
 import { Like } from 'typeorm'
-import { generateToken } from '../../src/utils/jwt.js'
+import generateToken from '../../src/utils/jwt.js'
 
 
 const route = express.Router()

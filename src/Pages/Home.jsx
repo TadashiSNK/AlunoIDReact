@@ -5,16 +5,11 @@ import Footer from '../Footer'
 import SideMenu from '../SideMenu'
 import Conteudo from '../Conteudo'
 import qrcode from '../assets/qr-code-default.png'
-import { jwtDecode } from 'jwt-decode'
-import { decodeToken } from '../utils/jwt'
-
+import decodeToken from '../utils/tokenToJson'
 
 function Home(){
 
-
-    
     const token = decodeToken()
-
 
     return(
         <div className='homeContainer'>
