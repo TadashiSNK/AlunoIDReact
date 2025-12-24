@@ -97,11 +97,11 @@
     background-color: #3DC2FF;
     border: none;
     cursor: pointer;
-    transition: ease 50ms;
+    transition: ease 200ms;
 }
 
 .CPF-Senha button:hover{
-    width: 45%;
+    width: 50%;
     height: 55px;
     background-color: #3DC2FF;
     border: none;
@@ -123,14 +123,15 @@
     width: 40%;
     height: 55px;
     border-radius: 50px;
-    background-color: #3DC2FF;
+    /* background-color: #3DC2FF; */
+    background-color: red;
     border: none;
     cursor: pointer;
-    transition: all 0.15s ease 0s;
+    transition: all 0.25s;
 }
 
 .login-btn:hover{
-    width: 45%;
+    width: 55%;
     height: 55px;
     background-color: #3DC2FF;
     border: none;

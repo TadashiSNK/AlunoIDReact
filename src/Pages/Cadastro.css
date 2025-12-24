@@ -2,3 +2,96 @@
 
 
 
+
+
+.cadastroHeader{
+    /* background-color: red; */
+    width: 100%;
+    height: 10%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.conteudoContainer{
+    align-items: start;
+    /* background-color: yellow; */
+}
+
+
+.option{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #032b353d;
+    height: 100%;
+    width: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.cadastroContainer{
+    overflow-y: auto;
+    background-color: rgba(255, 192, 203, 0.11);
+    height: 90%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.blocoDeInfo{
+    margin-top: 20px;
+    flex-shrink: 0;
+    width: 90%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.603);
+}
+
+.tituloBloco{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    width: 100%;
+    height: 25%;
+    padding-right: 10px;
+}
+
+.tituloBloco p{
+    color: var(--AzulTitulos);
+    /* background-color: purple; */
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.tituloBloco img{
+    height: 100%;
+    width: auto;
+    
+}
+
+.inputComNome{
+
+}
+
+.inputComNome p{
+    color: var(--AzulTitulos);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputComNome input{
+    background-color: #F0F4F8;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.603);
+    border: none;
+    height: 44px;
+}
+
