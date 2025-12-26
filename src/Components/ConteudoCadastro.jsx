@@ -18,7 +18,7 @@ export default function ConteudoCadastro(){
 
 
     return(
-        <div className="conteudoContainer">
+        <div className="conteudoContainer align-start">
             <div className='cadastroHeader flex-center'>
                 <div className='option' onClick={() => setTab('sala')} >Cadastro de Salas</div>
                 <div className='option' onClick={() => setTab('aluno')} >Cadastro de Alunos</div>

@@ -30,9 +30,9 @@ function Header(props){
             <div className='userMenu'>
                 <img src={notificacao} className='notificacao' />
 
-                <div class="userinfo">
-                    <p class="bold">Seja Bem vindo!</p>
-                    <p class="bold">{props.nome} {props.userID}</p>
+                <div className="userinfo">
+                    <p className="bold">Seja Bem vindo!</p>
+                    <p className="bold">{props.nome} {props.userID}</p>
                 </div>
 
                 <img src={kevin} className='profilePicture'/>

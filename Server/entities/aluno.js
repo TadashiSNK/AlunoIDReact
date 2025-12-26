@@ -1,4 +1,5 @@
 import { EntitySchema } from "typeorm";
+import usuario from "./usuario.js";
 
 const aluno = new EntitySchema({
     name: "aluno",
@@ -19,7 +20,7 @@ const aluno = new EntitySchema({
     relations: {
         usuario: {
             type: "one-to-one",
-            target: "usuario",
+            target: usuario,
             joinColumn: {
                 name: "id_aluno",
                 referencedColumnName: "id_usuario"

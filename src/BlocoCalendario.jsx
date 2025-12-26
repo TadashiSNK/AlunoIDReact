@@ -27,17 +27,17 @@ function diasNoMes(ano, mes){ /// me diz quantos dias tem em certo mês
 }
 
 //debug string
-console.log(`data:${data.toLocaleDateString()} ${dia}/${mes}/${ano}-${weekDay}
-        / dias em ${nomeDoMes}: ${diasMesMain} 
-        dias mes anterior:${diasMesAnterior} 
-        dias prox mes ${diasProxMes}
-        primeiro dia da semana do mes de ${nomeDoMes}: ${primeiroDiaMes}
-        `)
+// console.log(`data:${data.toLocaleDateString()} ${dia}/${mes}/${ano}-${weekDay}
+//         / dias em ${nomeDoMes}: ${diasMesMain} 
+//         dias mes anterior:${diasMesAnterior} 
+//         dias prox mes ${diasProxMes}
+//         primeiro dia da semana do mes de ${nomeDoMes}: ${primeiroDiaMes}
+//         `)
 
 
 let arrayDeDias = Array.from({length: diasMesMain}, (item, i) => i + 1)
 
-console.log(`${arrayDeDias}`)
+// console.log(`${arrayDeDias}`)
 
 function fillCalender(){
 

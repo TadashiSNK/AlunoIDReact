@@ -7,7 +7,6 @@ function decodeToken(){
     var decoded
 
     if (token != null){
-        console.log("token existe")
         decoded = jwtDecode(token)
     } 
     else{

@@ -28,17 +28,15 @@ function Login(){
                 senha: senha
             })
         })
-        const tokenJson = await response.json()
-
+        console.log(response)
+        
         if (!response.ok){
             seterroLogin(true)
             console.log("deu errado")
             return
         }
-
-        ///se o login der certo, seta o token no local storage
-        localStorage.setItem("token", tokenJson.token);
-
+        
+        const tokenJson = await response.json()
         if (tokenJson) {
 
         ///se o login der certo, seta o token no local storage

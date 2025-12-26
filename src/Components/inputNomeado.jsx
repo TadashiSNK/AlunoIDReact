@@ -8,7 +8,7 @@ export default function InputNomeado(props){
     return(
         <div className='inputComNome'>
             <p>{props.titulo}</p>
-            <input onChange={(e) => props.onChange(e.target.value)} style={{marginRight: props.espacodireita, width: props.tamanhoBarra}}></input>
+            <input type={props.tipo} placeholder='. . .' onChange={(e) => props.onChange(e.target.value)} style={{marginRight: props.espacodireita || "50px", width: props.tamanhoBarra}}></input>
         </div>
     )
 }

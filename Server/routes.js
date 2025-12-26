@@ -6,6 +6,6 @@ import cadastroController from './controllers/cadastroController.js'
 const routes = express.Router()
 
 routes.use("/login", loginController)
-routes.use("/Cadastro", cadastroController)
+routes.use("/cadastro", cadastroController)
 
 export default routes

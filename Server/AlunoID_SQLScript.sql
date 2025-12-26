@@ -7,18 +7,25 @@ desc entrada_saida;
 desc usuario;
 desc anotacoes;
 desc notificacoes;
+desc sala;
 
+select * from sala;
 select * from usuario;
 select * from aluno;
 
 
+INSERT INTO usuario(tipo_usuario, nome, email, senha) VALUES('aluno','Lucas Tadashi da Silva','lucas@email.com','123');
+INSERT INTO usuario(tipo_usuario, nome, email, senha, cpf) VALUES('aluno','Alessfa NFSU2','alesfaa@email.com','123', "123");
+
 create table usuario(
 	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-    tipo ENUM ('Aluno','Funcionario','Responsavel Legal') DEFAULT 'Aluno',
+    tipo_usuario ENUM ('Aluno','Funcionario','Responsavel Legal') DEFAULT 'Aluno',
 	nome VARCHAR(255),
     data_nasc DATE,
     cpf VARCHAR(255),
     rg VARCHAR(255),
+    email VARCHAR(255),
+    senha VARCHAR(255),
     sexo ENUM('H', 'M'),
     cep VARCHAR(255),
     numero VARCHAR(255),
@@ -58,9 +65,11 @@ CREATE TABLE responsavel_legal(
 
 
 
+select * from sala;
+INSERT INTO sala(nome) VALUES("Sala 01");
 
 create table sala(
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id_sala INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(255),
     tipo VARCHAR(255),
     andar INT,

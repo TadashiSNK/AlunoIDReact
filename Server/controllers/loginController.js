@@ -33,6 +33,9 @@ route.post("/", async (req, res) => {
 
         res.json({"token": token})
     }
+    else{
+        res.status(500).json({error:"usuario ou senha incorretos"})
+    }
 
 
 
