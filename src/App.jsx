@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Home />
   },
   {
-    path : 'Carteirinha',
+    path : '/Carteirinha',
     element: <Carteirinha />
   },
   {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <RouterProvider router={router} />
     </div>
   )

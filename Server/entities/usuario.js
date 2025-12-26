@@ -5,22 +5,25 @@ const usuario = new EntitySchema({
     tableName: 'usuario',
     columns: {
         id_usuario: {type: "int", primary:true, generated:true},
-        nome: {type: "varchar", length: 255, nullable:false},
-        cpf: {type: "varchar", length: 11, nullable:false, unique:true},
-        email: {type: "varchar", length: 255, nullable:false, unique:true},
-        cep: {type: "varchar", length:15, nullable:false},
-        numero_casa: {type: "varchar", length:10, nullable:false},
-        senha: {type:"varchar", length: 255, nullable:false},
-        escola: {type: "varchar", length: 255, nullable:false},
-        usuario_ativo: {type:"boolean", nullable:false},
-        em_aula: {type: "boolean", nullable:false},
         tipo_usuario: {
             type: "enum",
-            enum: ["Admin", "Aluno", "Responsavel", "Professor"],
+            enum: ["Admin", "Aluno", "Responsavel Legal", "Funcionario"],
             default: "Aluno",
             nullable:false
         },
-        carteirinhaHash: {type: "varchar", length: 255, nullable:false, unique:true}
+        nome: {type: "varchar", length: 255, nullable:false},
+        data_nasc: {type: "date"},
+        cpf: {type: "varchar", length: 11, nullable:false, unique:true},
+        rg: {type: "varchar", length: 255},
+        email: {type: "varchar", length: 255, nullable:false, unique:true},
+        senha: {type:"varchar", length: 255, nullable:false},
+        sexo: {
+            type:"enum",
+            enum: ["H", "M"]
+        },
+        cep: {type: "varchar", length:15, nullable:false},
+        numero_casa: {type: "varchar", length:10, nullable:false},
+        complemento: {type: "varchar", length:255, nullable:false},
     }
 })
 

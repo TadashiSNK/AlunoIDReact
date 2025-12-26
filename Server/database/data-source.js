@@ -3,6 +3,8 @@ import { DataSource } from "typeorm"
 
 
 import Usuario from "../entities/usuario.js"
+import Aluno from '../entities/aluno.js'
+import Sala from '../entities/sala.js'
 
 const AppDataSource = new DataSource({
     type: "mysql",
@@ -12,7 +14,7 @@ const AppDataSource = new DataSource({
     password: "",
     database: "ALUNOIDBD",
     // synchronize: true,
-    entities: [Usuario],       
+    entities: [Usuario, Aluno, Sala],       
     migrations: ["./Server/database/migrations/*cjs"],
 })
 
