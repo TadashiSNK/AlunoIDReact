@@ -30,6 +30,10 @@
     border-right: 1px solid black;
 }
 
+.option-selected{
+    background-color: lightblue;
+}
+
 .cadastroContainer{
     overflow-y: auto;
     background-color: rgba(255, 192, 203, 0.11);
@@ -55,7 +59,7 @@
 
 .tituloBloco{
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     /* background-color: red; */
     width: 100%;

@@ -13,6 +13,10 @@ import Login from './Pages/Login.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
 
 
+let counter = 3;
+
+
+
 const router = createBrowserRouter([
   {
     path : '/',

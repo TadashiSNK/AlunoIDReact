@@ -9,21 +9,20 @@ const usuario = new EntitySchema({
             type: "enum",
             enum: ["Admin", "Aluno", "Responsavel Legal", "Funcionario"],
             default: "Aluno",
-            nullable:false
         },
-        nome: {type: "varchar", length: 255, nullable:false},
+        nome: {type: "varchar", length: 255},
         data_nasc: {type: "date"},
-        cpf: {type: "varchar", length: 11, nullable:false, unique:true},
+        cpf: {type: "varchar", length: 11,},
         rg: {type: "varchar", length: 255},
-        email: {type: "varchar", length: 255, nullable:false, unique:true},
-        senha: {type:"varchar", length: 255, nullable:false},
+        email: {type: "varchar", length: 255},
+        senha: {type:"varchar", length: 255},
         sexo: {
             type:"enum",
             enum: ["H", "M"]
         },
-        cep: {type: "varchar", length:15, nullable:false},
-        numero_casa: {type: "varchar", length:10, nullable:false},
-        complemento: {type: "varchar", length:255, nullable:false},
+        cep: {type: "varchar", length:15},
+        numero_casa: {type: "varchar", length:10},
+        complemento: {type: "varchar", length:255},
     }
 })
 

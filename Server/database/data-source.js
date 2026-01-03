@@ -5,6 +5,7 @@ import { DataSource } from "typeorm"
 import Usuario from "../entities/usuario.js"
 import Aluno from '../entities/aluno.js'
 import Sala from '../entities/sala.js'
+import Funcionario from "../entities/funcionario.js"
 
 const AppDataSource = new DataSource({
     type: "mysql",
@@ -14,7 +15,7 @@ const AppDataSource = new DataSource({
     password: "",
     database: "ALUNOIDBD",
     // synchronize: true,
-    entities: [Usuario, Aluno, Sala],       
+    entities: [Usuario, Aluno, Sala, Funcionario],       
     migrations: ["./Server/database/migrations/*cjs"],
 })
 

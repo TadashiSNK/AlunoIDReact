@@ -32,7 +32,7 @@ function Header(props){
 
                 <div className="userinfo">
                     <p className="bold">Seja Bem vindo!</p>
-                    <p className="bold">{props.nome} {props.userID}</p>
+                    <p className="bold">{props.nome}</p>
                 </div>
 
                 <img src={kevin} className='profilePicture'/>

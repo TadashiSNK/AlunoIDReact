@@ -54,6 +54,7 @@ a:active {
 }
 
 .BotaoAdicionar{
+    margin: 10px;
     background-color: #2ECC71;
     border-radius: 60px;
     height: 60px;

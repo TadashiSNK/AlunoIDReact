@@ -6,12 +6,14 @@ import generateToken from '../../src/utils/jwt.js'
 import salaEntity from '../entities/sala.js'
 import alunoEntity from '../entities/aluno.js'
 import usuarioEntity from '../entities/usuario.js'
+import funcionarioEntity from '../entities/funcionario.js'
 
 
 const route = express.Router()
 const salaRepository = AppDataSource.getRepository(salaEntity)
 const alunoRepository = AppDataSource.getRepository(alunoEntity)
 const usuarioRepository = AppDataSource.getRepository(usuarioEntity)
+const funcionarioRepository = AppDataSource.getRepository(funcionarioEntity)
 
 
 route.post("/sala", async (req,res) => {
@@ -58,7 +60,7 @@ route.post("/aluno", async (req,res) => {
         rg,
         email,
         senha,
-        sexo,
+        genero,
         cep,
         numero_casa: numero,
         complemento,
@@ -77,6 +79,46 @@ route.post("/aluno", async (req,res) => {
 
     res.json({"status":"SUCESSO"})
 
+})
+
+route.post("/funcionario",async (req,res) => {
+        const {
+        nome, nasc, cpf, rg, email,
+        senha, sexo, cep, rua, numero,
+        bairro, cidade, complemento,
+        cargo, setor, contrato, registro
+        
+    } = req.body
+    let genero
+
+
+    if(sexo == "Feminino"){
+        genero = "M"
+    }else{ genero = "H"}
+
+
+    const usuario = await usuarioRepository.save({
+        tipo_usuario: "Funcionario",
+        nome,
+        data_nasc: nasc,
+        cpf,
+        rg,
+        email,
+        senha,
+        genero,
+        cep,
+        numero_casa: numero,
+        complemento,
+        
+    })
+
+    await funcionarioRepository.save({
+        id_funcionario: usuario.id_usuario,
+        cargo,
+        setor,
+        contrato,
+        registro
+    })
 })
 
 

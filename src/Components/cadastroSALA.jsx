@@ -45,7 +45,7 @@ export default function cadastroSALA(){
     return(
         <div className='cadastroContainer flex-center'>
             <div className='blocoDeInfo' style={{height: '400px'}}>
-                <div className='tituloBloco'><p>Informações da sala</p> <img className='titulo-icon' src={icon} />  </div>
+                <div className='tituloBloco'><p>Informações da sala:</p> <img className='titulo-icon' src={icon} />  </div>
 
                 <InputNomeado titulo="Nome/Numero da sala:" espacodireita='50px' tamanhoBarra="300px" onChange={setNome} />
                 <InputNomeado titulo="Tipo de sala:" espacodireita="50px" tamanhoBarra="200px" onChange={setTipo}/>
