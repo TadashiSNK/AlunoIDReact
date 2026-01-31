@@ -7,15 +7,15 @@
  * @class
  * @implements {MigrationInterface}
  */
-module.exports = class Db1767399130638 {
-    name = 'Db1767399130638'
+module.exports = class Db1769896276418 {
+    name = 'Db1769896276418'
 
     /**
      * @param {QueryRunner} queryRunner
      */
     async up(queryRunner) {
         await queryRunner.query(`CREATE TABLE \`usuario\` (\`id_usuario\` int NOT NULL AUTO_INCREMENT, \`tipo_usuario\` enum ('Admin', 'Aluno', 'Responsavel Legal', 'Funcionario') NOT NULL DEFAULT 'Aluno', \`nome\` varchar(255) NOT NULL, \`data_nasc\` date NOT NULL, \`cpf\` varchar(11) NOT NULL, \`rg\` varchar(255) NOT NULL, \`email\` varchar(255) NOT NULL, \`senha\` varchar(255) NOT NULL, \`sexo\` enum ('H', 'M') NOT NULL, \`cep\` varchar(15) NOT NULL, \`numero_casa\` varchar(10) NOT NULL, \`complemento\` varchar(255) NOT NULL, PRIMARY KEY (\`id_usuario\`)) ENGINE=InnoDB`);
-        await queryRunner.query(`CREATE TABLE \`aluno\` (\`id_aluno\` int NOT NULL, \`serie\` int NOT NULL, \`turma\` char(1) NOT NULL, \`modalidade_ensino\` varchar(255) NOT NULL, \`turno\` enum ('Manhã', 'Tarde', 'Noite') NOT NULL, \`necessidades_especiais\` tinyint NOT NULL DEFAULT 0, \`necessidades_desc\` text NOT NULL, PRIMARY KEY (\`id_aluno\`)) ENGINE=InnoDB`);
+        await queryRunner.query(`CREATE TABLE \`aluno\` (\`id_aluno\` int NOT NULL, \`serie\` int NOT NULL, \`turma\` char(1) NOT NULL, \`modalidade_ensino\` varchar(255) NOT NULL, \`turno\` enum ('Manhã', 'Tarde', 'Noite') NOT NULL, \`necessidades_especiais\` tinyint NOT NULL DEFAULT 0, \`necessidades_desc\` text NULL, PRIMARY KEY (\`id_aluno\`)) ENGINE=InnoDB`);
         await queryRunner.query(`CREATE TABLE \`sala\` (\`id_sala\` int NOT NULL AUTO_INCREMENT, \`nome\` varchar(255) NOT NULL, \`tipo\` varchar(255) NOT NULL, \`andar\` int NOT NULL, \`capacidade\` int NOT NULL, \`equipamentos\` text NOT NULL, \`tem_ar\` tinyint NOT NULL DEFAULT 0, \`tem_computador\` tinyint NOT NULL DEFAULT 0, \`tem_acessibilidade\` tinyint NOT NULL DEFAULT 0, PRIMARY KEY (\`id_sala\`)) ENGINE=InnoDB`);
         await queryRunner.query(`CREATE TABLE \`funcionario\` (\`id_funcionario\` int NOT NULL, \`cargo\` varchar(255) NOT NULL, \`setor\` varchar(255) NOT NULL, \`contrato\` varchar(255) NOT NULL, \`registro\` varchar(255) NOT NULL, \`data_admissao\` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), PRIMARY KEY (\`id_funcionario\`)) ENGINE=InnoDB`);
         await queryRunner.query(`ALTER TABLE \`aluno\` ADD CONSTRAINT \`FK_8a2d97bc538f6b5804aad14ebda\` FOREIGN KEY (\`id_aluno\`) REFERENCES \`usuario\`(\`id_usuario\`) ON DELETE CASCADE ON UPDATE NO ACTION`);

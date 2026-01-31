@@ -6,6 +6,7 @@ import InputNomeado from './inputNomeado'
 import InputRadio from './inputRadio'
 import { use, useState } from 'react'
 import App from '../App'
+import getCep from '../utils/cep'
 
 
 
@@ -27,10 +28,10 @@ export default function cadastroAluno(){
 
 
     const [cep, setCep] = useState(null)
-    const [rua, setRua] = useState(null)
-    const [numero, setNumero] = useState(null)
-    const [bairro, setBairro] = useState(null)
-    const [cidade, setCidade] = useState(null)
+    const [rua, setRua] = useState("")
+    const [numero, setNumero] = useState("")
+    const [bairro, setBairro] = useState("")
+    const [cidade, setCidade] = useState("")
     const [complemento, setComplemento] = useState(null)
 
     const [serie, setSerie] = useState(null)
@@ -40,6 +41,18 @@ export default function cadastroAluno(){
     const [necessidades, setNecessidade] = useState(false)
     const [necessidades_desc, setNecessidade_desc] = useState(null)
 
+    const completarEndereco = async () => {
+        if (!cep || cep.length != 8){
+            console.log("invalido")
+            return
+        }
+
+        const enderecoInfo = await getCep(cep)
+        console.log(enderecoInfo)
+        setRua(enderecoInfo.logradouro)
+        setBairro(enderecoInfo.bairro)
+        setCidade(enderecoInfo.localidade)
+    }
 
     const fetchCadastroAluno = async () => {
         await fetch('http://localhost:3333/cadastro/aluno', {
@@ -86,7 +99,7 @@ export default function cadastroAluno(){
 
 
                         <InputRadio onChange={setSexo} val={sexo} option1="Feminino" option2="Masculino" titulo="Sexo:" funcao="sexo" espacodireita="1px" tamanhoBarra="" />
-
+                        {sexo}
                         
                     </div>
 
@@ -98,11 +111,11 @@ export default function cadastroAluno(){
                     <div className='blocoDeInfo' style={{height: '350px'}}>
                         <div className='tituloBloco'><p>Endereço e contato: </p> <img className='titulo-icon' src={iconEndereco} />  </div>
         
-                        <InputNomeado onChange={setCep} titulo="CEP:" espacodireita="50px" />
-                        <InputNomeado onChange={setRua} titulo="Rua:" espacodireita="50px" tamanhoBarra="500px"/>
-                        <InputNomeado onChange={setNumero} titulo="Numero:" espacodireita="50px" tamanhoBarra="110px"/>
-                        <InputNomeado onChange={setBairro} titulo="Bairro:" espacodireita="50px" tamanhoBarra="300px"/>
-                        <InputNomeado onChange={setCidade} titulo="Cidade:" espacodireita="50px" tamanhoBarra="300px"/>
+                        <InputNomeado  onChange={setCep}  titulo="CEP:" espacodireita="50px" perdeufoco={completarEndereco}/>
+                        <InputNomeado value={rua} onChange={setRua} titulo="Rua:" espacodireita="50px" tamanhoBarra="500px"/>
+                        <InputNomeado value={numero} onChange={setNumero} titulo="Numero:" espacodireita="50px" tamanhoBarra="110px"/>
+                        <InputNomeado value={bairro} onChange={setBairro} titulo="Bairro:" espacodireita="50px" tamanhoBarra="300px"/>
+                        <InputNomeado value={cidade} onChange={setCidade} titulo="Cidade:" espacodireita="50px" tamanhoBarra="300px"/>
                         <InputNomeado onChange={setComplemento} titulo="Complemento:" espacodireita="50px" tamanhoBarra="200px"/>
                     </div>
 

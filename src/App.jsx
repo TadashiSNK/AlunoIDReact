@@ -11,6 +11,7 @@ import LoadingScreen from './LoadingScreen.jsx'
 import EntradaSaida from './Pages/EntradaSaida.jsx'
 import Login from './Pages/Login.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
+import Painel from './Pages/painel.jsx'
 
 
 let counter = 3;
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
   {
     path : '/Cadastro',
     element: <Cadastro/>
-  }
+  },
+  {
+    path : '/Painel',
+    element: <Painel/>
+  },
 ])
 
 function App() {

@@ -72,7 +72,7 @@ function Login(){
                     
                 <div className="flex-center campos">
                     <input type="text" name="user" placeholder="E-mail/CPF" id="user" onChange={(e) => setUser(e.target.value)}></input>
-                    <input type="text" name="senha" placeholder="Senha" id="senha" onChange={(e) => setSenha(e.target.value)}></input>
+                    <input type="password" name="senha" placeholder="Senha" id="senha" onChange={(e) => setSenha(e.target.value)}></input>
                     <button className='login-btn' onClick={tentarLogar}>ENTRAR</button>
                     <a href="google.com" id="esqueci-senha">Esqueci minha senha</a>
 

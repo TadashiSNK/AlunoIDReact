@@ -52,6 +52,7 @@ route.post("/aluno", async (req,res) => {
     }else{ genero = "H"}
 
 
+
     const usuario = await usuarioRepository.save({
         tipo_usuario: "Aluno",
         nome,
@@ -60,7 +61,7 @@ route.post("/aluno", async (req,res) => {
         rg,
         email,
         senha,
-        genero,
+        sexo: genero,
         cep,
         numero_casa: numero,
         complemento,
@@ -76,7 +77,7 @@ route.post("/aluno", async (req,res) => {
         necessidades_especiais: necessidades,
         necessidades_desc,
     })
-
+    console.log("aluno cadastrado")
     res.json({"status":"SUCESSO"})
 
 })

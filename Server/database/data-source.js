@@ -14,7 +14,6 @@ const AppDataSource = new DataSource({
     port: 3306,
     password: "",
     database: "ALUNOIDBD",
-    // synchronize: true,
     entities: [Usuario, Aluno, Sala, Funcionario],       
     migrations: ["./Server/database/migrations/*cjs"],
 })

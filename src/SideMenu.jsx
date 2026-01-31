@@ -25,6 +25,7 @@ function SideMenu(){
     { name: "Calendário", image: calendario, targetLink: "https://google.com" },
     { name: "Cadastro", image: livro, targetLink: "/Cadastro"},
     { name: "DEBUG", targetLink: "/LoadingDebug" },
+    { name: "Alunos", targetLink: "/Painel" },
     { name: "LOGIN", targetLink: "/Login" },
 ]
 

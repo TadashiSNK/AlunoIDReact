@@ -23,6 +23,13 @@ const usuario = new EntitySchema({
         cep: {type: "varchar", length:15},
         numero_casa: {type: "varchar", length:10},
         complemento: {type: "varchar", length:255},
+    },
+    relations:{
+        aluno:{
+            type: "one-to-one",
+            target: "aluno",
+            inverseSide: "usuario"
+        }
     }
 })
 
