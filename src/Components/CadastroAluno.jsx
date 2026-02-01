@@ -98,9 +98,7 @@ export default function cadastroAluno(){
                         <InputNomeado onChange={setRg} titulo="R.G." espacodireita='50px' tamanhoBarra="300px" />
 
 
-                        <InputRadio onChange={setSexo} val={sexo} option1="Feminino" option2="Masculino" titulo="Sexo:" funcao="sexo" espacodireita="1px" tamanhoBarra="" />
-                        {sexo}
-                        
+                        <InputRadio onChange={setSexo} val={sexo} option1="Feminino" option2="Masculino" titulo="Sexo:" funcao="sexo" espacodireita="1px" tamanhoBarra="" />                        
                     </div>
 
 

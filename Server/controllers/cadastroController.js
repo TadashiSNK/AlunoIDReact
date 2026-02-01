@@ -16,6 +16,8 @@ const usuarioRepository = AppDataSource.getRepository(usuarioEntity)
 const funcionarioRepository = AppDataSource.getRepository(funcionarioEntity)
 
 
+//ROTAS SALAS
+
 route.post("/sala", async (req,res) => {
 
     const {nome, tipo, andar, capacidade, equip, tem_ar, tem_pc, tem_acess} = req.body
@@ -32,6 +34,32 @@ route.post("/sala", async (req,res) => {
     })
 
     res.status(200).send("Dados Cadastrados")
+
+})
+
+
+
+
+// ROTAS ALUNOS
+
+route.patch("/aluno", async (req, res) => {
+    const {userID, novaSenha} = req.body
+
+    const result = await usuarioRepository.update({id_usuario: userID}, {senha: novaSenha})
+    if (result.affected === 0) {
+        return res.json({error: "usuario inexistente"})
+    }
+
+    res.json({ message: `Senha atualizada com sucesso para ${novaSenha}` });
+
+})
+
+
+route.delete("/aluno", async (req,res) => {
+    const {userID} = req.body
+
+    const deletedUser = await usuarioRepository.delete(userID)
+    res.send("Usuario deletado")
 
 })
 
@@ -81,6 +109,10 @@ route.post("/aluno", async (req,res) => {
     res.json({"status":"SUCESSO"})
 
 })
+
+
+
+//FUNCIONARO
 
 route.post("/funcionario",async (req,res) => {
         const {
