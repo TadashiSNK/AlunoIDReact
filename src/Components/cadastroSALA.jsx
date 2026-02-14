@@ -56,7 +56,7 @@ export default function cadastroSALA(){
 
                 <InputRadio value={temAr} onChange={setTemAr} titulo="Tem Ar-Condicionado?:" funcao="tem_ar" espacodireita="150px"/>
                 <InputRadio value={temComputador} onChange={setTemComputador} titulo="Tem Computadores?:" funcao="tem_comp" espacodireita="60px" />
-                <InputRadio value={temAcessibilidade} onChange={setTemAcessibilidade} titulo="Tem Acessibilidade?:" funcao="tem_acessi" />
+                <InputRadio  value={temAcessibilidade} onChange={setTemAcessibilidade} titulo="Tem Acessibilidade?:" funcao="tem_acessi" />
             </div>
             
 

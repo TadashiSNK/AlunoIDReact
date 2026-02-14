@@ -24,6 +24,17 @@ route.get("/alunos", async (req, res) => {
     res.json(alunos)
 })
 
+route.get("/busca/:query", async (req, res) => {
+    const {query} = req.params
+
+    const usuarios = await usuarioRepository.find({
+        where:{nome: Like(`${query}%`)},
+        relations: ["aluno"]
+    })
+
+    return res.json(usuarios)
+})
+
 
 
 export default route

@@ -88,7 +88,7 @@ route.post("/aluno", async (req,res) => {
         cpf,
         rg,
         email,
-        senha,
+        senha: "123",
         sexo: genero,
         cep,
         numero_casa: numero,

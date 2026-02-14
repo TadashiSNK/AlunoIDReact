@@ -132,7 +132,7 @@
     transform: scale(1.8);
     background-color: #F0F4F8;
     border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.603);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.603); */
     border: none;
     height: 44px;
     background-color: pink;
