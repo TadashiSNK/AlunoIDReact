@@ -43,7 +43,7 @@ export default function cadastroSALA(){
 
 
     return(
-        <div className='cadastroContainer flex-center'>
+        <div className='cadastroContainer flex-center' style={{justifyContent:"start"}}>
             <div className='blocoDeInfo' style={{height: '400px'}}>
                 <div className='tituloBloco'><p>Informações da sala:</p> <img className='titulo-icon' src={icon} />  </div>
 

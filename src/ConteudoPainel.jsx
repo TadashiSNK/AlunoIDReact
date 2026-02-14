@@ -11,6 +11,7 @@ import masculino from '../src/assets/masculino.png'
 import feminino from '../src/assets/feminino.png'
 import { Column } from 'typeorm'
 import InputRadio from './Components/inputRadio'
+import DivisaoDeLinha from './Components/DivisaoDeLinha'
 
 
 function Conteudo(){
@@ -18,6 +19,7 @@ function Conteudo(){
     const [alunos, setAlunos] = useState([])
     const [senha, setSenha] = useState('')
     const [pesquisa, setPesquisa] = useState('213')
+    const [emFoco, setEmFoco] = useState(null)
 
     const deleteUser = async (userID) => {
         const deletar = await fetch('http://localhost:3333/cadastro/aluno', {
@@ -71,8 +73,12 @@ function Conteudo(){
     console.log(toArray)
 }
 
-    const queryDeBusca = async () => {
-            const alunos = await fetch(`http://localhost:3333/controle/busca/${pesquisa}`, {
+    const queryDeBusca = async (query) => {
+        if(query == "" || query == null){
+            fetchAlunos()
+        }
+
+            const alunos = await fetch(`http://localhost:3333/controle/busca/${query.toLowerCase()}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -86,29 +92,34 @@ function Conteudo(){
     return(
         <div className='conteudoContainer' style={{backgroundColor:"lightblue", borderRadius:10, alignItems:"start"}}>
 
-            <div>BARRA DE PESQUISA <input type='text' onChange={(e) => setPesquisa(e.target.value)}></input> <button onClick={queryDeBusca}>teste</button> </div>
+            <div>BARRA DE PESQUISA {emFoco} <input type='text' onChange={(e) => queryDeBusca(e.target.value)}></input> <button onClick={queryDeBusca}>teste</button> </div>
 
             <div className='containerDaLista' style={{backgroundColor:"#F5F5F5"}}>
                 {alunos?.map((aluno)=> {
+                    const isOpen = emFoco === aluno.id_usuario
+
                     return(
-                        <div className='linhaIndividual' onClick={() => alert(`${aluno.turno}`)} key={aluno.id_usuario}>
+                        <div className={`linhaIndividual ${isOpen? "linhaEmFoco" : ""}`} onClick={() => setEmFoco(aluno.id_usuario)} key={aluno.id_usuario}>
                                 <div className='genderIcon'>
                                     {aluno.sexo == "H" && <img src={masculino}></img>}
                                     {aluno.sexo == "M" && <img src={feminino}></img>}
                                 </div>
 
-                                <p style={{margin:10,}}>{aluno.nome}</p>
-                                <p style={{margin:10,}}>{aluno.senha}</p>
-                                <p style={{margin:10,}}>{aluno.cpf}</p>
-                                <p style={{margin:10,}}>{aluno.modalidade_ensino}</p>
-                                <p style={{margin:10,}}>{aluno.data_nasc}</p>
-                                <p style={{margin:10,}}>{aluno.email}</p>
-                                <p style={{margin:10,}}>{aluno.rg}</p>
-                                <p style={{margin:10,}}>{aluno.sexo}</p>
-                                <p style={{margin:10,}}>{aluno.turno}</p>
-                                <button style={{width:50}} onClick={() => deleteUser(aluno.id_usuario)}>Del</button>
+
+                                <DivisaoDeLinha desc="Nome: " texto={aluno.nome}></DivisaoDeLinha>
+                                <DivisaoDeLinha desc="cpf: " texto={aluno.cpf}></DivisaoDeLinha>
+                                <DivisaoDeLinha desc="Idade: " texto={aluno.data_nasc}></DivisaoDeLinha>
+
+                                {isOpen && <>
+                                <DivisaoDeLinha desc="Modalidade: " texto={aluno.modalidade_ensino? "sim": "nao"}></DivisaoDeLinha>
+                                <DivisaoDeLinha desc="E-Mail: " texto={aluno.email}></DivisaoDeLinha>
+                                <DivisaoDeLinha desc="Sexo: " texto={aluno.sexo}></DivisaoDeLinha>
+                                        </>
+                                        }
+
+                                {/* <button style={{width:50}} onClick={() => deleteUser(aluno.id_usuario)}>Del</button>
                                 <button style={{width:50}} onClick={() => updateSenha(aluno.id_usuario)}>Att Senha</button>
-                                <input placeholder='nova senha' onChange={(e) => setSenha(e.target.value)}></input>
+                                <input placeholder='nova senha' onChange={(e) => setSenha(e.target.value)}></input> */}
 
                         </div>
 
