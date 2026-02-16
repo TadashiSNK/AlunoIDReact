@@ -12,6 +12,8 @@ import feminino from '../src/assets/feminino.png'
 import { Column } from 'typeorm'
 import InputRadio from './Components/inputRadio'
 import DivisaoDeLinha from './Components/DivisaoDeLinha'
+import './index.css'
+import Header from './Header'
 
 
 function Conteudo(){
@@ -95,27 +97,28 @@ function Conteudo(){
             <div>BARRA DE PESQUISA {emFoco} <input type='text' onChange={(e) => queryDeBusca(e.target.value)}></input> <button onClick={queryDeBusca}>teste</button> </div>
 
             <div className='containerDaLista' style={{backgroundColor:"#F5F5F5"}}>
+                <div>HEADER</div>
                 {alunos?.map((aluno)=> {
                     const isOpen = emFoco === aluno.id_usuario
 
                     return(
                         <div className={`linhaIndividual ${isOpen? "linhaEmFoco" : ""}`} onClick={() => setEmFoco(aluno.id_usuario)} key={aluno.id_usuario}>
+
                                 <div className='genderIcon'>
                                     {aluno.sexo == "H" && <img src={masculino}></img>}
                                     {aluno.sexo == "M" && <img src={feminino}></img>}
                                 </div>
 
-
-                                <DivisaoDeLinha desc="Nome: " texto={aluno.nome}></DivisaoDeLinha>
-                                <DivisaoDeLinha desc="cpf: " texto={aluno.cpf}></DivisaoDeLinha>
-                                <DivisaoDeLinha desc="Idade: " texto={aluno.data_nasc}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.nome}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.cpf}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.data_nasc}></DivisaoDeLinha>
 
                                 {isOpen && <>
-                                <DivisaoDeLinha desc="Modalidade: " texto={aluno.modalidade_ensino? "sim": "nao"}></DivisaoDeLinha>
-                                <DivisaoDeLinha desc="E-Mail: " texto={aluno.email}></DivisaoDeLinha>
-                                <DivisaoDeLinha desc="Sexo: " texto={aluno.sexo}></DivisaoDeLinha>
-                                        </>
-                                        }
+                                <DivisaoDeLinha tamanhodafonte={18} desc="Modalidade: " texto={aluno.aluno.modalidade_ensino}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={18} desc="E-Mail: " texto={aluno.email}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={18} desc="Sexo: " texto={aluno.sexo == "H"? "Masculino" : "Feminino"}></DivisaoDeLinha>
+                                </>
+                                }
 
                                 {/* <button style={{width:50}} onClick={() => deleteUser(aluno.id_usuario)}>Del</button>
                                 <button style={{width:50}} onClick={() => updateSenha(aluno.id_usuario)}>Att Senha</button>

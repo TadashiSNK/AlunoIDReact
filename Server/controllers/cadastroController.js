@@ -8,6 +8,12 @@ import alunoEntity from '../entities/aluno.js'
 import usuarioEntity from '../entities/usuario.js'
 import funcionarioEntity from '../entities/funcionario.js'
 
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const route = express.Router()
 const salaRepository = AppDataSource.getRepository(salaEntity)
@@ -41,6 +47,30 @@ route.post("/sala", async (req,res) => {
 
 
 // ROTAS ALUNOS
+
+route.post("/salvarfoto", async (req,res) => {
+    const {cpf, nome, imagem, timestamp } = req.body;
+
+    console.log(cpf, nome, timestamp)
+
+    const base64Data = imagem.replace(/^data:image\/png;base64,/, "");
+
+    const pasta = path.join(__dirname, "..", "..", "public", "rostos", nome)
+
+    if (!fs.existsSync(pasta)) {
+        fs.mkdirSync(pasta, { recursive: true });
+    }
+
+    const filePath = path.join(pasta, `${cpf}.png`);
+
+    fs.writeFileSync(filePath, base64Data, "base64");
+    console.log("Imagem salva em:", filePath);
+    res.json({ ok: true})
+})
+
+
+
+
 
 route.patch("/aluno", async (req, res) => {
     const {userID, novaSenha} = req.body

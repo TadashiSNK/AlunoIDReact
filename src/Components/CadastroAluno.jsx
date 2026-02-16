@@ -7,6 +7,8 @@ import InputRadio from './inputRadio'
 import { use, useState } from 'react'
 import App from '../App'
 import getCep from '../utils/cep'
+import CadastroRosto from './FaceLogin'
+import FaceLogin from './FaceLogin'
 
 
 
@@ -139,7 +141,8 @@ export default function cadastroAluno(){
 
 
 
-                    
+
+                    <FaceLogin cpfform={cpf}/>
         
                     <button className='BotaoAdicionar' onClick={fetchCadastroAluno} >ADICIONAR</button>
         </div>

@@ -2,6 +2,7 @@ import express from 'express'
 import { AppDataSource } from './database/data-source.js'
 import routes from './routes.js'
 import cors from 'cors'
+import fs from 'fs'
 
 const server = express()
 const port = 3333
@@ -9,8 +10,9 @@ const port = 3333
 
 server.use(express.urlencoded({ extended: true }))
 server.use(cors())
-server.use(express.json())
+server.use(express.json({ limit: '500mb' }))
 server.use("/", routes)
+
 
 AppDataSource.initialize()
     .then(async () => {
