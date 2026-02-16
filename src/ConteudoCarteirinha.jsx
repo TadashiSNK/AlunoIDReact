@@ -6,6 +6,7 @@ import catracaBig from './assets/catracaBig.png'
 import kevin from './assets/kevin.jpg'
 import { useEffect, useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
+import InputRadio from './Components/inputRadio'
 
 
 function ConteudoCarteirinha(){
@@ -26,6 +27,8 @@ function ConteudoCarteirinha(){
                 <div className='cartaInfo'>
                     <ul>
                         <li><p className='infoTexts'>Chupeta da Silva</p></li>
+                        
+
                         <li><p className='infoTexts'>ETEC Embu - Centro paula dentro</p></li>
                         <li><p className='infoTexts'>CPF: 123.456.789.01</p></li>
                         <li><p className='infoTexts'>RG: 123123123</p></li>
@@ -34,6 +37,7 @@ function ConteudoCarteirinha(){
                     </ul>
                 </div>
             </div>
+
 
             <div className='blocoCarta flex-center'>
                 <div className='qrCodeContainer' >

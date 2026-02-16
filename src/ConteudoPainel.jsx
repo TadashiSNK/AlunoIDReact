@@ -7,12 +7,21 @@ import BlocoAnotacoes from './BlocoAnotacoes'
 import { useState, useEffect } from 'react'
 import aluno from '../Server/entities/aluno'
 import Flex from 'react-calendar/dist/Flex.js'
+import masculino from '../src/assets/masculino.png'
+import feminino from '../src/assets/feminino.png'
+import { Column } from 'typeorm'
+import InputRadio from './Components/inputRadio'
+import DivisaoDeLinha from './Components/DivisaoDeLinha'
+import './index.css'
+import Header from './Header'
 
 
 function Conteudo(){
 
     const [alunos, setAlunos] = useState([])
     const [senha, setSenha] = useState('')
+    const [pesquisa, setPesquisa] = useState('213')
+    const [emFoco, setEmFoco] = useState(null)
 
     const deleteUser = async (userID) => {
         const deletar = await fetch('http://localhost:3333/cadastro/aluno', {
@@ -27,6 +36,8 @@ function Conteudo(){
         console.log(`Usuario ${userID} deletado`)
         fetchAlunos()
     }
+
+
 
 
     const updateSenha = async (userID) => {
@@ -62,32 +73,62 @@ function Conteudo(){
     const toArray = [...data]
     setAlunos(toArray)
     console.log(toArray)
-
 }
 
+    const queryDeBusca = async (query) => {
+        if(query == "" || query == null){
+            fetchAlunos()
+        }
+
+            const alunos = await fetch(`http://localhost:3333/controle/busca/${query.toLowerCase()}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const data = await alunos.json()
+            console.log(data)
+            setAlunos(data)
+        }
+
     return(
-        <div className='conteudoContainer'>
-            <div>
-                <button onClick={fetchAlunos}>Atualizar</button>
+        <div className='conteudoContainer' style={{backgroundColor:"lightblue", borderRadius:10, alignItems:"start"}}>
+
+            <div>BARRA DE PESQUISA {emFoco} <input type='text' onChange={(e) => queryDeBusca(e.target.value)}></input> <button onClick={queryDeBusca}>teste</button> </div>
+
+            <div className='containerDaLista' style={{backgroundColor:"#F5F5F5"}}>
+                <div>HEADER</div>
                 {alunos?.map((aluno)=> {
+                    const isOpen = emFoco === aluno.id_usuario
+
                     return(
-                        <div style={{display:'flex', flexDirection:"row", backgroundColor:"#F0F0F0", margin:5}} key={aluno.id_usuario}>
-                            <button style={{width:50}} onClick={() => deleteUser(aluno.id_usuario)}>Del</button>
-                            <button style={{width:50}} onClick={() => updateSenha(aluno.id_usuario)}>Att Senha</button>
-                            <input placeholder='nova senha' onChange={(e) => setSenha(e.target.value)}></input>
-                            <p style={{margin:10,}}>{aluno.nome}</p>
-                            <p style={{margin:10,}}>{aluno.senha}</p>
-                            <p style={{margin:10,}}>{aluno.cpf}</p>
-                            <p style={{margin:10,}}>{aluno.modalidade_ensino}</p>
-                            <p style={{margin:10,}}>{aluno.data_nasc}</p>
-                            <p style={{margin:10,}}>{aluno.email}</p>
-                            <p style={{margin:10,}}>{aluno.rg}</p>
-                            <p style={{margin:10,}}>{aluno.sexo}</p>
-                            <p style={{margin:10,}}>{aluno.turno}</p>
+                        <div className={`linhaIndividual ${isOpen? "linhaEmFoco" : ""}`} onClick={() => setEmFoco(aluno.id_usuario)} key={aluno.id_usuario}>
+
+                                <div className='genderIcon'>
+                                    {aluno.sexo == "H" && <img src={masculino}></img>}
+                                    {aluno.sexo == "M" && <img src={feminino}></img>}
+                                </div>
+
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.nome}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.cpf}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={24} cor="#1C3D6E" texto={aluno.data_nasc}></DivisaoDeLinha>
+
+                                {isOpen && <>
+                                <DivisaoDeLinha tamanhodafonte={18} desc="Modalidade: " texto={aluno.aluno.modalidade_ensino}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={18} desc="E-Mail: " texto={aluno.email}></DivisaoDeLinha>
+                                <DivisaoDeLinha tamanhodafonte={18} desc="Sexo: " texto={aluno.sexo == "H"? "Masculino" : "Feminino"}></DivisaoDeLinha>
+                                </>
+                                }
+
+                                {/* <button style={{width:50}} onClick={() => deleteUser(aluno.id_usuario)}>Del</button>
+                                <button style={{width:50}} onClick={() => updateSenha(aluno.id_usuario)}>Att Senha</button>
+                                <input placeholder='nova senha' onChange={(e) => setSenha(e.target.value)}></input> */}
 
                         </div>
+
                     )
                 })}
+                
             </div>
 
         </div>

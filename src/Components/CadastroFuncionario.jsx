@@ -64,7 +64,7 @@ export default function cadastroFuncionario(){
 
 
     return(
-        <div className='cadastroContainer flex-center'>
+        <div className='cadastroContainer flex-center' style={{justifyContent:"start"}}>
 
             {/* DADOS PESSOAIS */}
             <div className='blocoDeInfo' style={{height: '350px'}}>

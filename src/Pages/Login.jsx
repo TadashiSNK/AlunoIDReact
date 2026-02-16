@@ -2,6 +2,7 @@ import './Login.css'
 import logoDigital from '../assets/impressao-digital.png'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import LoginComRosto2 from '../Components/LoginComRosto2'
 
 
 //request do login
@@ -12,10 +13,11 @@ import { Link, useNavigate } from 'react-router-dom'
 function Login(){
 
 //request do login
-    const [user, setUser] = useState(null)
-    const [senha, setSenha] = useState(null)
+    const [user, setUser] = useState("ana.clara2@gmail.com")
+    const [senha, setSenha] = useState(123456)
     const [erroLogin, seterroLogin] = useState(false)
     const navigate = useNavigate()
+    const [reconhecendoFacial, setReconhecendoFacial] = useState(false)
 
     const tentarLogar = async () => {
         const response = await fetch('http://localhost:3333/login', {
@@ -41,7 +43,9 @@ function Login(){
 
         ///se o login der certo, seta o token no local storage
         localStorage.setItem("token", tokenJson.token);
-        navigate("/")
+        setReconhecendoFacial(true)
+        
+        // navigate("/")
         }
 
     }
@@ -70,14 +74,15 @@ function Login(){
                 </div>
                 <div className='CPF-Senha'>
                     
-                <div className="flex-center campos">
-                    <input type="text" name="user" placeholder="E-mail/CPF" id="user" onChange={(e) => setUser(e.target.value)}></input>
-                    <input type="password" name="senha" placeholder="Senha" id="senha" onChange={(e) => setSenha(e.target.value)}></input>
-                    <button className='login-btn' onClick={tentarLogar}>ENTRAR</button>
-                    <a href="google.com" id="esqueci-senha">Esqueci minha senha</a>
+                    <div className="flex-center campos">
+                        <input type="text" name="user" placeholder="E-mail/CPF" id="user" onChange={(e) => setUser(e.target.value)}></input>
+                        <input type="password" name="senha" placeholder="Senha" id="senha" onChange={(e) => setSenha(e.target.value)}></input>
+                        <button className='login-btn' onClick={tentarLogar}>ENTRAR</button>
+                        <a href="google.com" id="esqueci-senha">Esqueci minha senha</a>
 
 
-                </div>
+                    </div>
+                    {reconhecendoFacial && <LoginComRosto2 onClose={() => setReconhecendoFacial(false)} info={user} />}
 
                     {erroLogin && <p className='erroLogin'>Login e/ou senha incorretos</p>}
                 </div>

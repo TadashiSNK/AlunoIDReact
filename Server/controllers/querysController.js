@@ -16,12 +16,38 @@ const funcionarioRepository = AppDataSource.getRepository(funcionarioEntity)
 
 
 
-
+//GET RETORNA TODOS OS DADOS DE TODOS OS ALUNOS
 route.get("/alunos", async (req, res) => {
     const alunos = await usuarioRepository.find({
         relations: ["aluno"]
     })
     res.json(alunos)
+})
+
+
+//ENDPOINT DA SEARCH BAR PARA ALUNOS
+route.get("/busca/:query", async (req, res) => {
+    const {query} = req.params
+
+    const usuarios = await usuarioRepository.find({
+        where:{nome: Like(`${query}%`)},
+        relations: ["aluno"]
+    })
+
+    return res.json(usuarios)
+})
+
+
+
+
+
+
+
+route.get("/:id/cpf", async (req, res) => {
+    const {id} = req.params
+
+    const aluno = await usuarioRepository.findOneBy({id_usuario: id})
+    return res.json(aluno.cpf)
 })
 
 

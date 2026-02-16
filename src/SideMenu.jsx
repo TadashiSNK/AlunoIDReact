@@ -26,7 +26,8 @@ function SideMenu(){
     { name: "Cadastro", image: livro, targetLink: "/Cadastro"},
     { name: "DEBUG", targetLink: "/LoadingDebug" },
     { name: "Alunos", targetLink: "/Painel" },
-    { name: "LOGIN", targetLink: "/Login" },
+    { name: "Login", targetLink: "/Login" },
+    { name: "Facial", targetLink: "/facial" },
 ]
 
 
